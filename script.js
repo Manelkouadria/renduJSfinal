@@ -24,7 +24,10 @@ fetch('https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.g
         const texteAppelAction = document.getElementById("bouton");
         texteAppelAction.textContent = data.texteAppelAction;
 
-
+        // const section1 = document.createElement("section")
+        // const divUn = document.createElement("div")
+        // principale.appendChild("section1");
+        // section1.appendChild("divUn");
 
         //Appelationn
 
@@ -33,47 +36,83 @@ fetch('https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.g
         card.appendChild(texteAppelAction);
         principale.appendChild(card);
 
-        const avantage = document.createElement("div");
-        avantage.classList.add("avantagecli");
-
-    principale.appendChild(avantage);
 
 
+
+
+        let avis = data.avantagesClients
+        let divav = document.getElementById("av")
         // ici on utilise les données reçues, faire les avantages client 
-        console.log(data);
-    data.avantagesClients.forEach(element => {
-    
-        const avantagesClients = document.createElement("h3");
-         avantagesClients.classList.add("avantageclients");
 
-    avantagesClients.textContent = data.avantagesClients;
-    dispatchEvent.classList = "avantagesClients"
-    avantage.appendChild(avantagesClients);
+        avis.forEach(avantage => {
+            const avantages = document.createElement("div");
+            avantages.classList.add("avantagecli");
 
-    //niveau 1e2 fini.
+            const avantagesClients = document.createElement("h3");
+            avantagesClients.classList.add("avantageclients");
 
-//  Pour chaque activité dans les données JSON, crée dynamiquement une div contenant un titre, une description et une image.
+            avantagesClients.textContent = avantage;
 
-// Affiche ces informations dans une section dédiée, avec une carte pour chaque activité si les données contiennent un lien vers une image.
-   
-const section1= document.createElement("section")
-const div1 = document.createElement("div")
-const h21 =document.createElement ("h2")
-const p2= document.createElement("p")
-const img1 = document.createElement("img")
+divav.appendChild(avantages);
+            avantages.appendChild(avantagesClients);
 
-principale.appendChild(section1);
-section1.appendChild(div1)
-section1.appendChild
-section1.appendChild
-section1.appendChild
+            //niveau 1e2 fini.
 
-});
+            //  Pour chaque activité dans les données JSON, crée dynamiquement une div contenant un titre, une description et une image.
+
+            // Affiche ces informations dans une section dédiée, avec une carte pour chaque activité si les données contiennent un lien vers une image.
+
+
+        });
+
+        let activite = data.activites;
+
+
+        activite.forEach(element => {
+            const nom = document.createElement("h2")
+            const description = document.createElement("p")
+            const image = document.createElement("img")
+            const sectionActivite = document.createElement("section");
+            
+            const card2 = document.createElement("div")
+            card2.classList.add("sectionActivite");
+            const containerActivite = document.getElementById("containerActivite");
+            nom.textContent = element.nom;
+            description.textContent = element.description;
+            image.src = element["image-url"];
+
+card2.appendChild(image);
+            card2.appendChild(nom);
+            card2.appendChild(description);
+            
+            sectionActivite.appendChild(card2);
+            containerActivite.appendChild(sectionActivite);
+
+        });
+
     })
-    .catch(error => {
-        // ici on gère les erreurs
-        console.error('Erreur lors du fetch :', error);
+
+// Pour chaque témoignage dans les données JSON, crée dynamiquement une div contenant le prénom, le commentaire.
+// Ajoute ces témoignages sous les activités dans la page.
+ commentaire.forEach(element => {
+        const commentaire= document.getElementById("commentaire")
+        commentaire.textContent = element.commentaire;
+
+        const nomPrenom= document.createElement("h3");
+        const com= document.createElement("p")
+
+        nomPrenom.textContent= element.nomPrenom
+        com.textContent= element.com
+
+        commentaire.appendChild(nomPrenom);
+        commentaire.appendChild(com);
+
     });
+
+// .catch(error => {
+//     // ici on gère les erreurs
+//     console.error('Erreur lors du fetch :', error);
+// });
 
 
 
