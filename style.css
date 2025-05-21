@@ -18,6 +18,14 @@ gap: 10px;
 }
 
 .avantagecli{
+    display: flex;
+    justify-content: center;
+    gap: 95px;
+}
+
+
+.avantageclients{
+    
         width: 150px;
 
     padding: 6px 21px;
@@ -29,3 +37,4 @@ gap: 10px;
     background-color: white;
     box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.237);
 }
+
