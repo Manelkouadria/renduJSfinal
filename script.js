@@ -53,7 +53,7 @@ fetch('https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.g
 
             avantagesClients.textContent = avantage;
 
-divav.appendChild(avantages);
+            divav.appendChild(avantages);
             avantages.appendChild(avantagesClients);
 
             //niveau 1e2 fini.
@@ -70,44 +70,74 @@ divav.appendChild(avantages);
 
         activite.forEach(element => {
             const nom = document.createElement("h2")
+
             const description = document.createElement("p")
+
             const image = document.createElement("img")
+
             const sectionActivite = document.createElement("section");
+
             sectionActivite.classList.add("sectionActivite");
+
             const card2 = document.createElement("div")
-            
+
             const containerActivite = document.getElementById("containerActivite");
+
+
             nom.textContent = element.nom;
             description.textContent = element.description;
             image.src = element["image-url"];
 
-card2.appendChild(image);
+            card2.appendChild(image);
             card2.appendChild(nom);
             card2.appendChild(description);
-            
+
             sectionActivite.appendChild(card2);
             containerActivite.appendChild(sectionActivite);
 
         });
 
+
+        let temoignages = data.temoignages;
+        console.log(temoignages);
+
+
+        // Pour chaque témoignage dans les données JSON, crée dynamiquement une div contenant le prénom, le commentaire.
+        // Ajoute ces témoignages sous les activités dans la page.
+        temoignages.forEach(element => {
+            const temoignagesCont = document.getElementById("commentaire")
+
+
+            const prenom = document.createElement("h2");
+
+
+            const typeExperience = document.createElement("h3");
+
+
+            const commentaire = document.createElement("p");
+
+
+            const note = document.createElement("p");
+
+
+            // temoignages.textContent = element.temoignages;
+            prenom.textContent = element.prenom;
+            typeExperience.textContent = element.typeExperience;
+            commentaire.textContent = element.commentaire;
+            note.textContent = element.note
+
+            // document.body.appendChild(temoignages)
+
+            temoignagesCont.appendChild(prenom);
+            temoignagesCont.appendChild(typeExperience);
+            temoignagesCont.appendChild(commentaire);
+            temoignagesCont.append(note);
+
+
+
+        });
+
     })
-
-// Pour chaque témoignage dans les données JSON, crée dynamiquement une div contenant le prénom, le commentaire.
-// Ajoute ces témoignages sous les activités dans la page.
- data.commentaire.forEach(element => {
-        const commentaire= document.getElementById("commentaire")
-        commentaire.textContent = element.;
-
-        const nomPrenom= document.createElement("h3");
-        const com= document.createElement("p")
-
-        nomPrenom.textContent= element.nomPrenom
-        com.textContent= element.com
-
-        commentaire.appendChild(nomPrenom);
-        commentaire.appendChild(com);
-
-    });
 
 // .catch(error => {
 //     // ici on gère les erreurs
