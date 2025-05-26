@@ -106,8 +106,11 @@ fetch('https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.g
         // Ajoute ces témoignages sous les activités dans la page.
         temoignages.forEach(element => {
             const temoignagesCont = document.getElementById("commentaire")
+            temoignagesCont.classList.add("temoignages2");
 
 
+            const divTem = document.createElement("div");
+           divTem.classList.add("temoignages1"); 
             const prenom = document.createElement("h2");
 
 
@@ -128,21 +131,23 @@ fetch('https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.g
 
             // document.body.appendChild(temoignages)
 
-            temoignagesCont.appendChild(prenom);
-            temoignagesCont.appendChild(typeExperience);
-            temoignagesCont.appendChild(commentaire);
-            temoignagesCont.append(note);
+            temoignagesCont.appendChild(divTem);
+            divTem.appendChild(prenom);
+            divTem.appendChild(typeExperience);
+            divTem.appendChild(commentaire);
+            divTem.append(note);
 
 
 
         });
+        
 
     })
 
-// .catch(error => {
-//     // ici on gère les erreurs
-//     console.error('Erreur lors du fetch :', error);
-// });
+.catch(error => {
+    // ici on gère les erreurs
+    console.error('Erreur lors du fetch :', error);
+});
 
 
 

@@ -1,4 +1,6 @@
-
+*{
+    font-family: "Oswald", sans-serif;
+}
 
 #container {
     flex-direction: column;
@@ -14,10 +16,7 @@ font-size: larger;
     
 }
 
-div{
 
-gap: 10px;
-}
 
 .avantagecli{
     display: flex;
@@ -51,9 +50,10 @@ gap: 10px;
 
     text-align: center;
 
-    background-color: grey;
-    padding: 20px;
+    
+    
     text-align: left;
+    gap: 10px;
 
    
 }
@@ -68,7 +68,28 @@ gap: 10px;
 img{
     width: 100%;
 }
+.temoignages1{
+ width: 250px;
 
+    
+    border: 1px solid rgb(230, 226, 226);
 
+    text-align: center;
+
+    
+    background-color: white;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.237);
+   
+   
+}
+.temoignages2{
+     display: flex;
+     padding: 25px;
+    justify-content: center;
+    gap: 200px;
+}
+iframe{
+    width: 100%;
+}
 
 
