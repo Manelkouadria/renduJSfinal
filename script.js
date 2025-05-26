@@ -73,9 +73,9 @@ divav.appendChild(avantages);
             const description = document.createElement("p")
             const image = document.createElement("img")
             const sectionActivite = document.createElement("section");
-            
+            sectionActivite.classList.add("sectionActivite");
             const card2 = document.createElement("div")
-            card2.classList.add("sectionActivite");
+            
             const containerActivite = document.getElementById("containerActivite");
             nom.textContent = element.nom;
             description.textContent = element.description;
@@ -94,9 +94,9 @@ card2.appendChild(image);
 
 // Pour chaque témoignage dans les données JSON, crée dynamiquement une div contenant le prénom, le commentaire.
 // Ajoute ces témoignages sous les activités dans la page.
- commentaire.forEach(element => {
+ data.commentaire.forEach(element => {
         const commentaire= document.getElementById("commentaire")
-        commentaire.textContent = element.commentaire;
+        commentaire.textContent = element.;
 
         const nomPrenom= document.createElement("h3");
         const com= document.createElement("p")

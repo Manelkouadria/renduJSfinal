@@ -1,3 +1,8 @@
+*{
+    background-color: lightgrey;
+}
+
+
 #container {
     flex-direction: column;
     display: flex;
@@ -41,6 +46,7 @@ gap: 10px;
 
 
 #containerActivite{
+    margin: auto;
             width: 95%;
 
     padding: 6px 21px;
@@ -48,9 +54,17 @@ gap: 10px;
 
     text-align: center;
 
-    background-color: white;
+    background-color: grey;
     padding: 20px;
     text-align: left;
+
+    p{
+        background-color: grey;
+
+    }
+    h2{
+        background-color: grey;
+    }
 }
 
 #av{
@@ -63,4 +77,11 @@ gap: 10px;
 img{
     width: 100%;
 }
+
+.sectionActivite{
+background-color: grey;
+
+}
+
+
 
